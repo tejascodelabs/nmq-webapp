@@ -38,7 +38,9 @@ export default function QueueSection({
 
         <div className="flex items-center gap-3">
           <div className="h-10 px-3 bg-slate-50 rounded-lg flex items-center gap-2 text-slate-700">
-            <span className="text-[10px] font-extrabold uppercase tracking-wider text-slate-400">Waiting</span>
+            <span className="text-[10px] font-extrabold uppercase tracking-wider text-slate-400">
+              Waiting
+            </span>
             <strong className="text-lg font-black">{counts[q.key]}</strong>
           </div>
 
@@ -68,7 +70,9 @@ export default function QueueSection({
           ))}
 
           {currentWaiting.length === 0 && (
-            <div className="col-span-full text-xs text-slate-400 italic py-2">No tokens waiting</div>
+            <div className="col-span-full text-xs text-slate-400 italic py-2">
+              No tokens waiting
+            </div>
           )}
         </div>
       </div>

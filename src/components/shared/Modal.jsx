@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
 export default function Modal({ isOpen, onClose, title, children }) {
   // Prevent background scrolling when modal is open
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isOpen]);
 
@@ -18,11 +18,7 @@ export default function Modal({ isOpen, onClose, title, children }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm transition-opacity animate-fadeIn">
       {/* BACKDROP CLICK CLOSES MODAL */}
-      <div 
-        className="fixed inset-0" 
-        onClick={onClose} 
-        aria-hidden="true" 
-      />
+      <div className="fixed inset-0" onClick={onClose} aria-hidden="true" />
 
       {/* MODAL CARD */}
       <div className="relative w-full max-w-md bg-[#fffdf9] border border-[#e7dfd5] rounded-2xl shadow-xl overflow-hidden z-10 transition-all">
@@ -40,9 +36,7 @@ export default function Modal({ isOpen, onClose, title, children }) {
         </div>
 
         {/* MODAL BODY */}
-        <div className="p-6 max-h-[80vh] overflow-y-auto">
-          {children}
-        </div>
+        <div className="p-6 max-h-[80vh] overflow-y-auto">{children}</div>
       </div>
     </div>
   );
